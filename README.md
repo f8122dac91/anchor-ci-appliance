@@ -16,3 +16,17 @@ To set specific versions for solana-cli and anchor-cli (e.g. solana-cli v1.9.0, 
 ```
 docker build -t anchor-ci-appliance --build-arg SOLANA_CLI=v1.9.0 --build-arg ANCHOR_CLI=v0.19.0 .
 ```
+
+## Build for Gitlab Container Registry
+
+Build with:
+
+```
+docker build -t registry.gitlab.com/socean-finance/util/anchor-ci-appliance .
+```
+
+and push with:
+
+```
+docker push registry.gitlab.com/socean-finance/util/anchor-ci-appliance
+```
