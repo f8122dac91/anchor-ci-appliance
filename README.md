@@ -25,6 +25,15 @@ Build with:
 docker build -t registry.gitlab.com/socean-finance/util/anchor-ci-appliance .
 ```
 
+tag with (solana-cli version followed by anchor-cli version):
+
+```
+docker tag \
+    registry.gitlab.com/socean-finance/util/anchor-ci-appliance \
+    registry.gitlab.com/socean-finance/util/anchor-ci-appliance:v1.9.0-v1.19.0
+```
+
+
 and push with:
 
 ```
