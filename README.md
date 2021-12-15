@@ -8,7 +8,7 @@ is released on GitHub.
 ## Build Commands
 
 ```
-docker build -t anchor-ci-appliance
+docker build -t anchor-ci-appliance .
 ```
 
 To set specific versions for solana-cli and anchor-cli (e.g. solana-cli v1.9.0, anchor-cli v0.19.0), run:
@@ -37,5 +37,5 @@ docker tag \
 and push with:
 
 ```
-docker push registry.gitlab.com/socean-finance/util/anchor-ci-appliance
+docker push registry.gitlab.com/socean-finance/util/anchor-ci-appliance:v1.9.0-v1.19.0
 ```
