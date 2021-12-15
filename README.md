@@ -70,3 +70,30 @@ _assuming the project's `Anchor.toml` specifies `./.test-keypair.json` as the wa
 cluster = "localnet"
 wallet = "./.test-keypair.json"
 ```
+
+
+## Example `[.gitlab-ci.yml](_gitlab-ci.yml)`
+
+```yaml
+stages:
+  - build
+  - test
+
+build:
+  image: registry.gitlab.com/socean-finance/util/anchor-ci-appliance:v1.9.0-v0.19.0
+  stage: build
+  before-script:
+    - rustc --version && cargo --version && solana --version && anchor --version
+  script:
+    - anchor build
+
+test:
+  image: registry.gitlab.com/socean-finance/util/anchor-ci-appliance:v1.9.0-v0.19.0
+  stage: test
+  before-script:
+    - rustc --version && cargo --version && solana --version && anchor --version
+    - solana-keygen new --no-passphrase -o ./test-keypair.json
+    - yarn install
+  script:
+    - anchor test
+```
