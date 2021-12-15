@@ -72,7 +72,9 @@ wallet = "./.test-keypair.json"
 ```
 
 
-## Example `[.gitlab-ci.yml](_gitlab-ci.yml)`
+## Example `.gitlab-ci.yml`
+
+[file](_gitlab-ci.yml)
 
 ```yaml
 stages:
