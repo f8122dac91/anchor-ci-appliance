@@ -71,6 +71,16 @@ cluster = "localnet"
 wallet = "./.test-keypair.json"
 ```
 
+**NOTE**: To run js tests, as opposed to ts tests, that uses `mocha` instead of `ts-mocha`, use this command to
+link the mocha binary before issuing anchor test:
+
+```
+docker run --rm -it \
+    -v`pwd`:/workdir \
+    registry.gitlab.com/socean-finance/util/anchor-ci-appliance:v1.9.0-v0.19.0 \
+    /bin/bash -c "yarn install && cd node_modules/mocha/ && yarn link && cd ../.. && solana-keygen new --no-passphrase -o ./.test-keypair.json && anchor test"
+```
+
 
 ## Example `.gitlab-ci.yml`
 
