@@ -21,6 +21,13 @@ docker build -t anchor-ci-appliance \
 ```
 
 
+## Login to Gitlab Registry
+
+```
+docker login registry.gitlab.com
+```
+
+
 ## Build for Gitlab Container Registry
 
 Build with:
