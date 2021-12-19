@@ -8,12 +8,28 @@ build:
   script:
     - rustc --version && cargo --version && solana --version && anchor --version
     - anchor build
+  artifacts:
+    expire_in: 24 hrs
+    paths:
+      - target/
+  cache:
+    key:
+      files:
+        - Cargo.lock
+    paths:
+      - target/
 
 test:
   image: registry.gitlab.com/socean-finance/util/anchor-ci-appliance:v1.9.0-v0.19.0
   stage: test
   script:
     - rustc --version && cargo --version && solana --version && anchor --version
-    - solana-keygen new --no-passphrase -o ./test-keypair.json
+    - solana-keygen new --no-passphrase -o ./.test-keypair.json
     - yarn install
     - anchor test
+  cache:
+    key:
+      files:
+        - yarn.lock
+    paths:
+      - target/
