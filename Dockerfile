@@ -17,6 +17,10 @@ ENV PATH="${HOME}/.cargo/bin:${PATH}"
 ENV PATH="${HOME}/.local/share/solana/install/active_release/bin:${PATH}"
 ENV PATH="${HOME}/.nvm/versions/node/${NODE_VERSION}/bin:${PATH}"
 
+# Required for (native) GitHub Action
+ENV RUSTUP_HOME="/root/.rustup"
+ENV CARGO_HOME="/root/.cargo"
+
 # Install base utilities.
 RUN mkdir -p /workdir && mkdir -p /tmp && \
     apt-get update -qq && apt-get upgrade -qq && apt-get install -qq \
