@@ -1,6 +1,6 @@
 # Anchor CI Appliance
 
-> Also hosted on [soceanfi/anchor-ci-appliance](https://hub.docker.com/repository/docker/f8122dac91/anchor-ci-appliance) on docker hub
+> Also hosted on [soceanfi/anchor-ci-appliance](https://hub.docker.com/repository/docker/soceanfi/anchor-ci-appliance) on docker hub
 
 Docker image to generate deterministic, verifiable builds of Anchor programs.
 
